@@ -25,7 +25,9 @@ public class MapGenerator {
     public void generateMap(){
         mapRandomiser = new OpenSimplexNoise(rand.nextInt(Integer.MAX_VALUE));
         for(int i = 0; i < width; i++){
-            mapRandomiser.eval()
+            for(int j = 0; j < height; j++) {
+                mapRandomiser.eval(i,j);
+            }
         }
     }
 
